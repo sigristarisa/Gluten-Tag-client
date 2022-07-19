@@ -38,6 +38,6 @@ button {
 }
 
 button:hover {
-  color: var(--white);
+  color: var(--grey);
   background-color: var(--blue);
 }

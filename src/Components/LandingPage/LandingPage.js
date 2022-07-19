@@ -1,6 +1,9 @@
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  const goToNameStarter = () => navigate("./name-starter");
   return (
     <main>
       <section className='content-container'>
@@ -9,7 +12,7 @@ const LandingPage = () => {
           <h2>Let's start your sourdough journey</h2>
         </div>
         <div className='btn-container'>
-          <button>Enter</button>
+          <button onClick={() => goToNameStarter()}>Enter</button>
         </div>
       </section>
     </main>
