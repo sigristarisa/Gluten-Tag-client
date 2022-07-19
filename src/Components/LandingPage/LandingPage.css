@@ -1,0 +1,43 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--yellow);
+  display: grid;
+  place-items: center;
+}
+
+.content-container {
+  width: 50vw;
+  height: 50vh;
+}
+
+.title-container {
+  height: 20vh;
+  display: grid;
+  place-items: center;
+}
+
+.title-container h1 {
+  font-size: var(--font-xl);
+}
+
+.btn-container {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+
+button {
+  width: 120px;
+  height: 56px;
+  border: none;
+  border-radius: 32px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: var(--font-m);
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--white);
+  background-color: var(--blue);
+}
