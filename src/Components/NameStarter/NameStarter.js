@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { sourdoughContext } from "../../helpers/sourdoughContext";
+import client from "../../helpers/client";
 import "./NameStarter.css";
 
 const NameStarter = () => {
@@ -14,22 +15,15 @@ const NameStarter = () => {
 
   const submitStarterName = (e) => {
     e.preventDefault();
-
-    const opts = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(sourdough),
-    };
-
-    fetch(`http://localhost:3030/sourdough/startername`, opts)
-      .then((res) => res.json())
-      .then((data) => setSourdough(data.data));
+    client
+      .post("/sourdough/startername", sourdough)
+      .then((data) => console.log(data.data.sourdough));
 
     navigate("/calculator");
   };
 
   return (
-    <main className='name-starter'>
+    <main>
       <div>
         <h1>What's the name of your sourdough starter?</h1>
         <form className='name-starter-input-form' onSubmit={submitStarterName}>
